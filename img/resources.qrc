@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="perimetros">
+    <file>perimetro_circulo.png</file>
+    <file>p_cometa.png</file>
+    <file>perimetro_rombo.png</file>
+  </qresource>
+  <qresource prefix="areas">
+    <file>area_circulo.png</file>
+    <file>area_rombo.png</file>
+  </qresource>
+</RCC>
