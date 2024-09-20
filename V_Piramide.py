@@ -18,15 +18,20 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtOpenGLWidgets import QOpenGLWidget
 from PySide6.QtWidgets import (QApplication, QDialog, QHBoxLayout, QLabel,
     QLineEdit, QPushButton, QSizePolicy, QWidget)
+import pyqtgraph.opengl as gl
+
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(331, 394)
-        self.openGLWidget = QOpenGLWidget(Dialog)
-        self.openGLWidget.setObjectName(u"openGLWidget")
-        self.openGLWidget.setGeometry(QRect(0, 0, 331, 221))
+        # Crear la vista OpenGL para los gráficos
+        self.plot_3d = gl.GLViewWidget()
+        self.plot_3d.setObjectName(u"openGLWidget")
+        self.plot_3d.setMinimumSize(400, 400)  # Para que la vista 3D sea visible desde el principio
+        # Cambiar el color de fondo de la vista 3D
+        self.plot_3d.setBackgroundColor((255, 255, 255, 255))
         self.Lbl_Formula = QLabel(Dialog)
         self.Lbl_Formula.setObjectName(u"Lbl_Formula")
         self.Lbl_Formula.setGeometry(QRect(10, 280, 211, 16))

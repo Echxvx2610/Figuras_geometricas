@@ -272,6 +272,9 @@ class MenuVolumenesWindow(QMainWindow):
         
         # Conectar el botón para abrir la ventana 
         self.ui.Btn_V_Esfera.clicked.connect(self.openVolumenEsfera)
+        self.ui.Btn_V_Piramide.clicked.connect(self.openVolumenPiramide)
+        self.ui.Btn_V_Cilindro.clicked.connect(self.openVolumenCilindro)
+        
         self.ui.Btn_Regresar.clicked.connect(self.close)
         self.ui.Btn_Salir.clicked.connect(self.close)
     
@@ -279,6 +282,12 @@ class MenuVolumenesWindow(QMainWindow):
         self.volumen_esfera_dialog = VolumenEsferaDialog()
         self.volumen_esfera_dialog.exec()
         
+    def openVolumenPiramide(self):
+        self.volumen_piramide_dialog = VolumenPiramideDialog()
+        self.volumen_piramide_dialog.exec()
+    
+    def openVolumenCilindro(self):
+        pass
 
 class VolumenEsferaDialog(QDialog):
     def __init__(self):
@@ -320,7 +329,50 @@ class VolumenEsferaDialog(QDialog):
         for line in lines:
             line_item = gl.GLLinePlotItem(pos=line, color=color, width=2.0, antialias=True)
             self.ui.plot_3d.addItem(line_item)
+
+class VolumenPiramideDialog(QDialog):
+    def __init__(self):
+        super(VolumenPiramideDialog, self).__init__()
+        self.ui = VolumenPiramide()  # Asegúrate de que estás usando el nombre correcto de tu clase de UI
+        self.ui.setupUi(self)
         
+        # Inicializar plot_3d
+        self.ui.plot_3d = gl.GLViewWidget(self)
+        self.ui.plot_3d.setGeometry(10, 10, 300, 220)  # Ajusta el tamaño y posición
+        self.ui.plot_3d.setBackgroundColor((0, 0, 0)) # black
+
+        # Mostrar el círculo en 3D al iniciar la ventana
+        self.display_pyramid()
+        
+        # Conectar los botones a sus funciones
+        self.ui.Btn_Calcular.clicked.connect(self.calcular_volumen)
+        self.ui.Btn_Regresar.clicked.connect(self.close)
+        self.ui.Btn_Salir.clicked.connect(self.close)
+        
+    def calcular_volumen(self):
+        pass
+    
+    def display_pyramid(self):
+        self.clear_view()
+
+        # Crear una pirámide en 3D y aumentar la altura
+        verts = np.array([[0, 0, 2], [1, 1, 0], [-1, 1, 0], [-1, -1, 0], [1, -1, 0]])  # Aumentar el Z del vértice superior a 2
+        faces = np.array([[0, 1, 2], [0, 2, 3], [0, 3, 4], [0, 4, 1], [1, 2, 3], [1, 3, 4]])  # Base dividida en triángulos
+        mesh_data = gl.MeshData(vertexes=verts, faces=faces)
+        mesh_item = gl.GLMeshItem(meshdata=mesh_data, color=(0, 1, 0, 1), shader="shaded", drawEdges=True)
+
+        # Añadir el elemento a la vista
+        self.ui.plot_3d.addItem(mesh_item)
+    
+    def clear_view(self):
+        """Limpia la vista actual antes de mostrar una nueva figura"""
+        self.ui.plot_3d.clear()  # Limpiar los elementos 3D
+
+    def add_lines_to_3d(self, lines, color=(1, 1, 1, 1)):
+        """Añadir líneas 2D/3D a la vista OpenGL"""
+        for line in lines:
+            line_item = gl.GLLinePlotItem(pos=line, color=color, width=2.0, antialias=True)
+            self.ui.plot_3d.addItem(line_item)
     
 if __name__ == "__main__":
     app = QApplication([])
