@@ -267,28 +267,35 @@ class AreaCometaDialog(QDialog):
 class MenuVolumenesWindow(QMainWindow):
     def __init__(self):
         super(MenuVolumenesWindow, self).__init__()
-        self.ui = MenuVolumenes()  # Aplicamos la UI del menú de volumenes
+        self.ui = MenuVolumenes()
         self.ui.setupUi(self)
-        
-        # Conectar el botón para abrir la ventana 
+
+        self.volumen_esfera_dialog = None
+        self.volumen_piramide_dialog = None
+        self.volumen_cilindro_dialog = None
+
         self.ui.Btn_V_Esfera.clicked.connect(self.openVolumenEsfera)
         self.ui.Btn_V_Piramide.clicked.connect(self.openVolumenPiramide)
         self.ui.Btn_V_Cilindro.clicked.connect(self.openVolumenCilindro)
         
         self.ui.Btn_Regresar.clicked.connect(self.close)
         self.ui.Btn_Salir.clicked.connect(self.close)
-    
-    def openVolumenEsfera(self):
-        self.volumen_esfera_dialog = VolumenEsferaDialog()
-        self.volumen_esfera_dialog.exec()
-        
-    def openVolumenPiramide(self):
-        self.volumen_piramide_dialog = VolumenPiramideDialog()
-        self.volumen_piramide_dialog.exec()
-    
-    def openVolumenCilindro(self):
-        pass
 
+    def openVolumenEsfera(self):
+        if self.volumen_esfera_dialog is None:
+            self.volumen_esfera_dialog = VolumenEsferaDialog()
+        self.volumen_esfera_dialog.show()  # usa show() en lugar de exec()
+
+    def openVolumenPiramide(self):
+        if self.volumen_piramide_dialog is None:
+            self.volumen_piramide_dialog = VolumenPiramideDialog()
+        self.volumen_piramide_dialog.show()
+
+    def openVolumenCilindro(self):
+        if self.volumen_cilindro_dialog is None:
+            self.volumen_cilindro_dialog = VolumenCilindroDialog()
+        self.volumen_cilindro_dialog.show()
+    
 class VolumenEsferaDialog(QDialog):
     def __init__(self):
         super(VolumenEsferaDialog, self).__init__()
@@ -330,6 +337,9 @@ class VolumenEsferaDialog(QDialog):
             line_item = gl.GLLinePlotItem(pos=line, color=color, width=2.0, antialias=True)
             self.ui.plot_3d.addItem(line_item)
 
+    def closeEvent(self, event):
+        super().closeEvent(event)
+        # Limpiar recursos de OpenGL aquí si es necesario
 class VolumenPiramideDialog(QDialog):
     def __init__(self):
         super(VolumenPiramideDialog, self).__init__()
@@ -374,6 +384,54 @@ class VolumenPiramideDialog(QDialog):
             line_item = gl.GLLinePlotItem(pos=line, color=color, width=2.0, antialias=True)
             self.ui.plot_3d.addItem(line_item)
     
+    def closeEvent(self, event):
+        super().closeEvent(event)
+        # Limpiar recursos de OpenGL aquí si es necesario
+    
+class VolumenCilindroDialog(QDialog):
+    def __init__(self):
+        super(VolumenCilindroDialog, self).__init__()
+        self.ui = VolumenCilindro()  # Asegúrate de que estás usando el nombre correcto de tu clase de UI
+        self.ui.setupUi(self)
+        
+        # Inicializar plot_3d
+        self.ui.plot_3d = gl.GLViewWidget(self)
+        self.ui.plot_3d.setGeometry(10, 10, 300, 220)  # Ajusta el tamaño y posición
+        self.ui.plot_3d.setBackgroundColor((0, 0, 0)) # black
+
+        # Mostrar el círculo en 3D al iniciar la ventana
+        self.display_cylinder()
+        
+        # Conectar los botones a sus funciones
+        self.ui.Btn_Calcular.clicked.connect(self.calcular_volumen)
+        self.ui.Btn_Regresar.clicked.connect(self.close)
+        self.ui.Btn_Salir.clicked.connect(self.close)
+        
+    def calcular_volumen(self):
+        pass
+    
+    def display_cylinder(self):
+        self.clear_view()
+
+        # Crear un cilindro en 3D
+        mesh_data = gl.MeshData.cylinder(rows=10, cols=20, radius=[1.0, 1.0], length=2.0)
+        mesh_item = gl.GLMeshItem(meshdata=mesh_data, color=(0, 0, 1, 1), shader="shaded", drawEdges=True)
+        self.ui.plot_3d.addItem(mesh_item)
+        
+    def clear_view(self):
+        """Limpia la vista actual antes de mostrar una nueva figura"""
+        self.ui.plot_3d.clear()  # Limpiar los elementos 3D
+
+    def add_lines_to_3d(self, lines, color=(1, 1, 1, 1)):
+        """Añadir líneas 2D/3D a la vista OpenGL"""
+        for line in lines:
+            line_item = gl.GLLinePlotItem(pos=line, color=color, width=2.0, antialias=True)
+            self.ui.plot_3d.addItem(line_item)
+        
+    def closeEvent(self, event):
+        super().closeEvent(event)
+        # Limpiar recursos de OpenGL aquí si es necesario
+
 if __name__ == "__main__":
     app = QApplication([])
 
