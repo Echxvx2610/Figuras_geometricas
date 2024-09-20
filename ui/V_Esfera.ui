@@ -6,132 +6,97 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>469</width>
-    <height>417</height>
+    <width>323</width>
+    <height>394</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="Lbl_Formula">
+  <widget class="QOpenGLWidget" name="openGLWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>270</y>
+     <x>0</x>
+     <y>0</y>
      <width>331</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Formula:  4L</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="Txb_L">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>70</y>
-     <width>50</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>40</y>
-     <width>191</width>
      <height>221</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(:/perimetros/perimetro_rombo.png);</string>
+  </widget>
+  <widget class="QLabel" name="Lbl_Formula">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>280</y>
+     <width>211</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Gothic</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
-    <string/>
+    <string>Formula:  4/3πr³</string>
    </property>
   </widget>
   <widget class="QLabel" name="Lbl_Resultado">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>310</y>
-     <width>311</width>
-     <height>31</height>
+     <width>241</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>MS PGothic</family>
-     <pointsize>16</pointsize>
+     <family>MS Gothic</family>
+     <pointsize>14</pointsize>
     </font>
    </property>
    <property name="text">
     <string>Resultado:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>70</y>
+     <x>10</x>
+     <y>250</y>
      <width>21</width>
      <height>16</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>MS Gothic</family>
+     <pointsize>14</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>L</string>
+    <string>r:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLineEdit" name="Txb_r">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>10</y>
-     <width>261</width>
+     <x>30</x>
+     <y>250</y>
+     <width>41</width>
      <height>20</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Perimetro Rombo</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>380</y>
+     <x>20</x>
+     <y>360</y>
      <width>295</width>
-     <height>30</height>
+     <height>31</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -139,8 +104,8 @@
      <widget class="QPushButton" name="Btn_Regresar">
       <property name="font">
        <font>
-        <family>MS PGothic</family>
-        <pointsize>11</pointsize>
+        <family>MS Gothic</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -152,8 +117,8 @@
      <widget class="QPushButton" name="Btn_Calcular">
       <property name="font">
        <font>
-        <family>MS PGothic</family>
-        <pointsize>11</pointsize>
+        <family>MS Gothic</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -165,8 +130,8 @@
      <widget class="QPushButton" name="Btn_Salir">
       <property name="font">
        <font>
-        <family>MS PGothic</family>
-        <pointsize>11</pointsize>
+        <family>MS Gothic</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -176,16 +141,7 @@
     </item>
    </layout>
   </widget>
-  <zorder>layoutWidget</zorder>
-  <zorder>label_3</zorder>
-  <zorder>Lbl_Formula</zorder>
-  <zorder>Txb_L</zorder>
-  <zorder>Lbl_Resultado</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label</zorder>
  </widget>
- <resources>
-  <include location="img/resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

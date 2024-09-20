@@ -7,6 +7,5 @@ pyside6-rcc your_resources.qrc -o resources_rc.py
 #comando en consola
 pyside6-uic ui/your_file.ui -o output_file.py
 
-pyside6-uic ui/A_Circulo.ui -o A_Circulo.py
-pyside6-uic ui/A_Rombo.ui -o A_Rombo.py
-pyside6-uic ui/A_Cometa.ui -o A_Cometa.py
+
+pyside6-uic ui/V_Esfera.ui -o V_Esfera.py

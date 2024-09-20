@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>537</width>
+    <width>469</width>
     <height>519</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>280</x>
      <y>100</y>
      <width>21</width>
      <height>16</height>
@@ -36,7 +36,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>20</x>
      <y>40</y>
      <width>431</width>
      <height>321</height>
@@ -52,7 +52,7 @@
   <widget class="QLineEdit" name="Txb_a">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>290</x>
      <y>100</y>
      <width>51</width>
      <height>22</height>
@@ -65,31 +65,12 @@
     </font>
    </property>
   </widget>
-  <widget class="QPushButton" name="Btn_Salir">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>470</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Salir</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="Lbl_Formula">
    <property name="geometry">
     <rect>
      <x>30</x>
      <y>360</y>
-     <width>331</width>
+     <width>261</width>
      <height>41</height>
     </rect>
    </property>
@@ -103,29 +84,10 @@
     <string>Formula:  2a + 2b</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Btn_Regresar">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>470</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Regresar</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>100</x>
      <y>40</y>
      <width>261</width>
      <height>20</height>
@@ -142,25 +104,6 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="Btn_Calcular">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>470</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Calcular</string>
    </property>
   </widget>
   <widget class="QLabel" name="Lbl_Resultado">
@@ -185,7 +128,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>270</x>
      <y>270</y>
      <width>21</width>
      <height>16</height>
@@ -205,7 +148,7 @@
   <widget class="QLineEdit" name="Txb_b">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>280</x>
      <y>270</y>
      <width>51</width>
      <height>22</height>
@@ -217,6 +160,57 @@
      <pointsize>11</pointsize>
     </font>
    </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>480</y>
+     <width>295</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="Btn_Regresar">
+      <property name="font">
+       <font>
+        <family>MS PGothic</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Regresar</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Btn_Calcular">
+      <property name="font">
+       <font>
+        <family>MS PGothic</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Calcular</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Btn_Salir">
+      <property name="font">
+       <font>
+        <family>MS PGothic</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Salir</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>

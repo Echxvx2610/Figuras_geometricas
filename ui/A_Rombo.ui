@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>517</width>
+    <width>449</width>
     <height>449</height>
    </rect>
   </property>
@@ -35,7 +35,7 @@
   <widget class="QLineEdit" name="Txb_d">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>280</x>
      <y>80</y>
      <width>51</width>
      <height>22</height>
@@ -48,48 +48,10 @@
     </font>
    </property>
   </widget>
-  <widget class="QPushButton" name="Btn_Regresar">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>410</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Regresar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="Btn_Salir">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>410</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Salir</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>100</x>
      <y>30</y>
      <width>251</width>
      <height>301</height>
@@ -124,7 +86,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>270</x>
      <y>80</y>
      <width>21</width>
      <height>16</height>
@@ -141,29 +103,10 @@
     <string>d</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Btn_Calcular">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>410</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS PGothic</family>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Calcular</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>80</x>
      <y>10</y>
      <width>261</width>
      <height>20</height>
@@ -185,7 +128,7 @@
   <widget class="QLineEdit" name="Txb_D">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>300</x>
      <y>270</y>
      <width>51</width>
      <height>22</height>
@@ -201,7 +144,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>280</x>
      <y>270</y>
      <width>21</width>
      <height>16</height>
@@ -217,6 +160,57 @@
    <property name="text">
     <string>D</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>410</y>
+     <width>295</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="Btn_Regresar">
+      <property name="font">
+       <font>
+        <family>MS PGothic</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Regresar</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Btn_Calcular">
+      <property name="font">
+       <font>
+        <family>MS PGothic</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Calcular</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Btn_Salir">
+      <property name="font">
+       <font>
+        <family>MS PGothic</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Salir</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <zorder>label_3</zorder>
   <zorder>Lbl_Formula</zorder>
